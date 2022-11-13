@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: black;
+}
+nav {
+  margin-top: 20vh;
+  padding: clamp(1rem, 5vw, 6rem)
+}
+nav > a {
+  color: rgba(255, 255, 255, .25);
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 300;
+  text-decoration: none;
+  position: relative;
+}
+
+nav > a:hover {
+  color: white;
+}
+
+nav > a > img {
+  position: absolute;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(.5);
+  transition: transform 250ms, opacity 250ms;
+  pointer-event: none;
+  width: min(50vw, 800px);
+}
+
+nav > a:hover > img {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+nav > a > span {
+  display: block;
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  position: relative;
+  z-index: 2;
+}
+
+nav > a > span:hover {
+  border-color: white;
+}
